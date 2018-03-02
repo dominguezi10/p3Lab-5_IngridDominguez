@@ -3,7 +3,7 @@
 #include <typeinfo>
 #include <vector>
 
-//#include "Zoologico.h"
+#include "Zoologico.h"
 #include "Animales.h"
 #include "Patas.h"
 #include "Pelaje.h"
@@ -53,6 +53,18 @@ void TrasladarAnimales(vector*<Animales>);*/
 int main(){
     int opcion = 1;
     vector<Animales*> animales;
+    Zoologico* zoologico;
+    string nombre;
+    int tamanio, capacidad;
+    cout<< "Ingrese el nombre del Zoologico:"<< endl;
+    cin>> nombre;
+    cout<< "Ingrese el tamaño: "<< endl;
+    cin>> tamanio;
+    cout<<"Ingrese la capacidad de personas:"<< endl;
+    cin>>capacidad;
+
+    zoologico = new Zoologico(nombre, tamanio, capacidad);
+
 
     while(opcion>=1 && opcion <=4){
         opcion = menu();
@@ -83,11 +95,45 @@ int main(){
                     int posicionNueva = (posicion-1);
                     delete animales[posicionNueva];
                      animales[posicionNueva] = NULL;
-                } };
+                } else{
+                    cout<< "NO hay animales en lista de espera" << endl;
+                }};
             break;
         
-            case 3:
+            case 3:{
                 cout<<"transferir"<< endl;
+                if(animales.size()>0){
+                    for(int i= 0; i<animales.size(); i++){
+                        if(animales[i]->getTipo() == 1){
+                            zoologico->aniadirElemento(animales[i], 1);
+
+                        }else if(animales[i]->getTipo() == 2){
+                            zoologico->aniadirElemento(animales[i], 2);
+
+                        }else if(animales[i]->getTipo() == 3){
+                            zoologico->aniadirElemento(animales[i], 3);
+
+                        }else if(animales[i]->getTipo() == 4){
+                            zoologico->aniadirElemento(animales[i], 3);
+                        }
+                        //cout<< animales[i]->getTipo() << endl;
+
+                    }// fin del for
+
+                    //liberar memoria
+	                for(int i =0; i<animales.size(); i++){
+		                delete animales[i];
+		                animales[i] = NULL;
+                	}
+
+	                //borra las casillas del vector
+	                animales.clear();
+                }// fin del if 
+                else{
+                    cout<< "NO hay animales en lista de espera" << endl;
+                }
+
+                };
             break;
 
             case 4:
@@ -131,7 +177,7 @@ int menu(){
 //menu tipo de animal
 int menuTipoAnimal(){
     int opcion = -1;
-    while(opcion<1 || opcion>5){
+    while(opcion<1 || opcion>4){
         cout<<"Ingrese que tipo de animal es: "<< endl;
         cout<<"1.-Árticos "<< endl << "2.-Desérticos"<< endl<< "3.-Tropicales"<< endl <<"4.-Sabana"<< endl;
         cin>>opcion;

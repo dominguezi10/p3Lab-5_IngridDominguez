@@ -1,7 +1,7 @@
-lab5: main.o Animales.o Patas.o Pelaje.o Ojos.o Orejas.o Cola.o
-	g++ main.o Animales.o Patas.o Pelaje.o Ojos.o Orejas.o Cola.o -o lab5
+lab5: main.o Zoologico.o Animales.o Patas.o Pelaje.o Ojos.o Orejas.o Cola.o
+	g++ main.o Zoologico.o Animales.o Patas.o Pelaje.o Ojos.o Orejas.o Cola.o -o lab5
 
-main.o: main.cpp Animales.h Patas.h Pelaje.h Ojos.h Orejas.h Cola.h
+main.o: main.cpp Zoologico.o Animales.h Patas.h Pelaje.h Ojos.h Orejas.h Cola.h
 	g++ -c main.cpp
 
 Animales.o: Animales.h Animales.cpp Patas.h Pelaje.h Ojos.h Orejas.h Cola.h
@@ -19,3 +19,5 @@ Ojos.o: Ojos.h Ojos.cpp
 Orejas.o: Orejas.h Orejas.cpp
 	g++ -c Orejas.cpp
 
+Zoologico.o: Zoologico.h Zoologico.cpp Animales.h
+	g++ -c Zoologico.cpp
