@@ -104,17 +104,20 @@ int main(){
                 cout<<"transferir"<< endl;
                 if(animales.size()>0){
                     for(int i= 0; i<animales.size(); i++){
-                        if(animales[i]->getTipo() == 1){
-                            zoologico->aniadirElemento(animales[i], 1);
+                        if(animales[i]!= NULL){
+                         
+                            if(animales[i]->getTipo() == 1){
+                                zoologico->aniadirElemento(animales[i], 1);
 
-                        }else if(animales[i]->getTipo() == 2){
-                            zoologico->aniadirElemento(animales[i], 2);
+                            }else if(animales[i]->getTipo() == 2){
+                                zoologico->aniadirElemento(animales[i], 2);
 
-                        }else if(animales[i]->getTipo() == 3){
-                            zoologico->aniadirElemento(animales[i], 3);
+                            }else if(animales[i]->getTipo() == 3){
+                                zoologico->aniadirElemento(animales[i], 3);
 
-                        }else if(animales[i]->getTipo() == 4){
-                            zoologico->aniadirElemento(animales[i], 3);
+                            }else if(animales[i]->getTipo() == 4){
+                                zoologico->aniadirElemento(animales[i], 3);
+                            }
                         }
                         //cout<< animales[i]->getTipo() << endl;
 
@@ -138,6 +141,7 @@ int main(){
 
             case 4:
                 cout<<"listar"<< endl;
+                zoologico->listarTodo();
             break;
 
         }

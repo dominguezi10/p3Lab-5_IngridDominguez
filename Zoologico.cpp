@@ -18,6 +18,29 @@ Zoologico::Zoologico(){
 
 }//Fin constructor sencillo
 
+void Zoologico:: listarTodo(){
+    cout<< "-> Elementos de Zona Artica:"<< endl;
+    for(int i= 0; i<zonaArtica.size(); i++){
+        cout<< (i+1) << "- "<<zonaArtica[i]->getNombre()<< endl;
+    }
+
+    cout<< "-> Elementos de Zona Desertica:"<< endl;
+    for(int i= 0; i<zonaDesertica.size(); i++){
+        cout<< (i+1) << "- "<<zonaDesertica[i]->getNombre()<< endl;
+    }
+
+    cout<< "-> Elementos de Jungla Tropical:"<< endl;
+    for(int i= 0; i<junglaTropical.size(); i++){
+        cout<< (i+1) << "- "<<junglaTropical[i]->getNombre()<< endl;
+    }
+
+    cout<< "-> Elementos de Sabana:"<< endl;
+    for(int i= 0; i<sabana.size(); i++){
+        cout<< (i+1) << "- "<<sabana[i]->getNombre()<< endl;
+    }
+}
+
+
 void Zoologico:: aniadirElemento(Animales* animal, int tipo){
     
     switch(tipo){

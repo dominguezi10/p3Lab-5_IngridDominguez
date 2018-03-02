@@ -40,7 +40,9 @@ class Zoologico{
         vector<Animales *> getSabana();
         void setSabana(vector<Animales *>);
 
+        //metodos de adminisracion
         void aniadirElemento(Animales*, int);
+        void listarTodo();
 
     //Destructor
     ~Zoologico();
