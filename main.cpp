@@ -26,7 +26,7 @@ int peludo();
 Animales* CrearAnimal();
 
 //eliminar
-void EliminarAnimal();
+void eliminarAnimal();
 
 //patas
 Patas* crearPatas();
@@ -64,8 +64,26 @@ int main(){
                 cout<< "Animal Agregado Exitosamente!! "<< endl;
             break;
 
-            case 2:
+            case 2:{
                 cout<<"Eliminar"<< endl;
+                int posicion = -1;
+                if(animales.size()>0){
+                    cout<< "Lista de animales"<< endl;
+                    for(int i = 0; i<animales.size(); i++){
+                        if(animales[i] != NULL){
+                           cout<< (i+1)<< "- "<<animales[i]->getNombre() << endl; 
+                        }
+                    }
+
+                    while(posicion<1 || posicion>animales.size()){
+                        cout<< "Ingrese la posicion del elemento a eliminar: ";
+                        cin>>posicion;
+                    }
+
+                    int posicionNueva = (posicion-1);
+                    delete animales[posicionNueva];
+                     animales[posicionNueva] = NULL;
+                } };
             break;
         
             case 3:
@@ -275,6 +293,23 @@ Cola* crearCola(){
 }
 
 void eliminarAnimal(){
+    /*int posicion = -1;
+    if(animales.size()>0){
+        cout<< "Lista de animales";
+        for(int i = 0; i<animales.size(); i++){
+            cout<< (i+1)<< "- "<<animales[i]->getNombre() << endl;
+        }
+
+        while(posicion<1 || posicion>animales.size()){
+            cout<< "Ingrese la posicion del elemento a eliminar: ";
+            cin>>posicion;
+        }
+
+        delete animales[posicion];
+        animales[posicion] = NULL;
+    }*/
+    
+
 
 }
 /*
