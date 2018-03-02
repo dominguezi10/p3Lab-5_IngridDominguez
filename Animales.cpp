@@ -122,7 +122,7 @@ void Animales:: setCola(Cola* cola){
 
 Animales::~Animales(){
 
-    cout<<"La instancia de Animales fue eliminada";
+    cout<<"delete.. ";
 
 }
 
