@@ -28,12 +28,12 @@ void Zoologico:: listarTodo(){
     cout<< "-> Elementos de Zona Artica:"<< endl;
     
 
-    /*for(int i= 0; i<zonaArtica.size(); i++){
+    for(int i= 0; i<zonaArtica.size(); i++){
         temporal = zonaArtica[i]->getNombre();
         an = zonaArtica[i];
         for(int j = 1; j<zonaArtica.size(); j++){
             temporal2 = zonaArtica[j]->getNombre();
-            an = zonaArtica[j];
+            an2 = zonaArtica[j];
             uno = temporal.at(0);
             dos = temporal2.at(0);
 
@@ -41,13 +41,32 @@ void Zoologico:: listarTodo(){
                 zonaArtica[j] = an;
                 zonaArtica[j-1] = an2;
             }
-            cout<<"this ";
+            cout<<"this ZA ";
         }
         
-    }*/
+    }
 
     for(int i= 0; i<zonaArtica.size(); i++){
         cout<< (i+1) << "- "<<zonaArtica[i]->getNombre()<< endl;
+    }
+
+
+    for(int i= 0; i<zonaDesertica.size(); i++){
+        temporal = zonaDesertica[i]->getNombre();
+        an = zonaArtica[i];
+        for(int j = 1; j<zonaDesertica.size(); j++){
+            temporal2 = zonaDesertica[j]->getNombre();
+            an2 = zonaDesertica[j];
+            uno = temporal.at(0);
+            dos = temporal2.at(0);
+
+            if(uno> dos){
+                zonaDesertica[j] = an;
+                zonaDesertica[j-1] = an2;
+            }
+            cout<<"this ZD ";
+        }
+        
     }
 
     cout<< "-> Elementos de Zona Desertica:"<< endl;
@@ -55,9 +74,48 @@ void Zoologico:: listarTodo(){
         cout<< (i+1) << "- "<<zonaDesertica[i]->getNombre()<< endl;
     }
 
+
+
+    for(int i= 0; i<junglaTropical.size(); i++){
+        temporal = junglaTropical[i]->getNombre();
+        an = junglaTropical[i];
+        for(int j = 1; j<junglaTropical.size(); j++){
+            temporal2 = junglaTropical[j]->getNombre();
+            an2 = junglaTropical[j];
+            uno = temporal.at(0);
+            dos = temporal2.at(0);
+
+            if(uno> dos){
+                junglaTropical[j] = an;
+                junglaTropical[j-1] = an2;
+            }
+            cout<<"this JT ";
+        }
+        
+    }
+
     cout<< "-> Elementos de Jungla Tropical:"<< endl;
     for(int i= 0; i<junglaTropical.size(); i++){
         cout<< (i+1) << "- "<<junglaTropical[i]->getNombre()<< endl;
+    }
+
+
+    for(int i= 0; i<sabana.size(); i++){
+        temporal = sabana[i]->getNombre();
+        an = sabana[i];
+        for(int j = 1; j<sabana.size(); j++){
+            temporal2 = sabana[j]->getNombre();
+            an2 = sabana[j];
+            uno = temporal.at(0);
+            dos = temporal2.at(0);
+
+            if(uno> dos){
+                sabana[j] = an;
+                sabana[j-1] = an2;
+            }
+            cout<<"this JT ";
+        }
+        
     }
 
     cout<< "-> Elementos de Sabana:"<< endl;
