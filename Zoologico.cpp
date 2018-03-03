@@ -19,7 +19,33 @@ Zoologico::Zoologico(){
 }//Fin constructor sencillo
 
 void Zoologico:: listarTodo(){
+    string temporal;
+    string temporal2;
+    char uno;
+    char dos;
+    Animales* an ;
+    Animales* an2;
     cout<< "-> Elementos de Zona Artica:"<< endl;
+    
+
+    /*for(int i= 0; i<zonaArtica.size(); i++){
+        temporal = zonaArtica[i]->getNombre();
+        an = zonaArtica[i];
+        for(int j = 1; j<zonaArtica.size(); j++){
+            temporal2 = zonaArtica[j]->getNombre();
+            an = zonaArtica[j];
+            uno = temporal.at(0);
+            dos = temporal2.at(0);
+
+            if(uno> dos){
+                zonaArtica[j] = an;
+                zonaArtica[j-1] = an2;
+            }
+            cout<<"this ";
+        }
+        
+    }*/
+
     for(int i= 0; i<zonaArtica.size(); i++){
         cout<< (i+1) << "- "<<zonaArtica[i]->getNombre()<< endl;
     }

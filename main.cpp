@@ -116,7 +116,7 @@ int main(){
                                 zoologico->aniadirElemento(animales[i], 3);
 
                             }else if(animales[i]->getTipo() == 4){
-                                zoologico->aniadirElemento(animales[i], 3);
+                                zoologico->aniadirElemento(animales[i], 4);
                             }
                         }
                         //cout<< animales[i]->getTipo() << endl;
@@ -125,8 +125,10 @@ int main(){
 
                     //liberar memoria
 	                for(int i =0; i<animales.size(); i++){
-		                delete animales[i];
-		                animales[i] = NULL;
+		                //if(animales[i] != NULL){
+                            delete animales[i];
+		                    animales[i] = NULL;
+                        
                 	}
 
 	                //borra las casillas del vector
